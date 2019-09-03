@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="ad.size" content="width=480, height=320">
+    <meta name="imgweb" content="Google Web Designer 1.9.0.0619" data-gwd-width="480px" data-gwd-height="320px">
+    <title>Samsung 4k | Consideração | 480x320</title>
+
+    <style>
+        #canvas {
+            border: 1px solid #000;
+            position: relative;
+            overflow: hidden;
+            width: 478px;
+            height: 318px;
+            cursor: pointer;
+        }
+
+        a#clickArea {
+            position: absolute;
+            z-index: 100;
+            width: 480px;
+            height: 320px;
+            cursor: pointer;
+           
+        }
+        #canvas {visibility: hidden; opacity: 0;}
+        .logo_samsung_branco1, .logo_samsung_preto { position: absolute; left: 370px; top: 12px; }
+        .bg_preto_circle { position: absolute; left: 0px; top: 0px; width: 480px; height: 320px; background-color: #000; overflow: hidden; }
+        .bg_circle1, .bg_circle2, .bg_circle3, .bg_circle4, .bg_circle5 { position: absolute; left: -175px; top: -240px;}
+        .txt1_1_div {position: absolute; left: 156px; top: 50px; width: 267px; height: 44px; overflow: hidden;}
+        .txt1_2_div {position: absolute; left: 139px; top: 93px; width: 318px; height: 62px; overflow: hidden;}
+        .txt1_3_div {position: absolute; left: 156px; top: 142px; width: 267px; height: 45px; overflow: hidden;}
+        .icone1_1 { position: absolute; left: 180px; top: 199px;}
+        .icone1_2 { position: absolute; left: 223px; top: 197px;}
+        .icone1_3 { position: absolute; left: 265px; top: 199px;}
+        .cta_bg1, .cta_bg2, .cta_bg3 { position: absolute; left: 112px; top: 268px; z-index: 5;}
+        .cta_txt1, .cta_txt2, .cta_txt3 { position: absolute; left: 192px; top: 276px; z-index: 5;}
+        .mais1, .mais4 { position: absolute; left: 412px; top: 92px; z-index: 5;}
+        .mais2, .mais3 { position: absolute; left: 412px; top: 92px; z-index: 4; opacity: 0.2;}
+
+        .linha_branca1_1 { position: absolute; left: 138px; top: 64px;}
+        .linha_branca1_2 { position: absolute; left: 275px; top: 64px;}
+        .icone2_1 { position: absolute; left: 228px; top: 49px;}
+        .txt2_1_div { position: absolute; left: 176px; top: 102px; width:215px; height: 31px; overflow: hidden;}
+        .txt2_2_div { position: absolute; left: 132px; top: 133px; width:346px; height: 54px; overflow: hidden;}
+        .txt2_3_div { position: absolute; left: 163px; top: 173px; width:246px; height: 57px; overflow: hidden;}
+        .icone2_2 { position: absolute; left: 223px; top: 228px;}
+        .linha_branca2_1 { position: absolute; left: 138px; top: 237px;}
+        .linha_branca2_2 { position: absolute; left: 275px; top: 237px;}
+        .bg_sound_animation { position: absolute; left: 0px; top: 0px; background-color: #000; z-index: -1;}
+
+        .bg_globo { position: absolute; left: 0px; top: 0px; }
+        .txt3_1 { position: absolute; left: 127px; top: 63px; }
+        .txt3_2 { position: absolute; left: 126px; top: 114px; }
+        .txt3_3 { position: absolute; left: 126px; top: 143px; }
+        .txt3_4 { position: absolute; left: 126px; top: 172px; }
+        .txt3_5 { position: absolute; left: 126px; top: 200px; }
+        .txt3_6 { position: absolute; left: 128px; top: 231px; }
+        .riscos { position: absolute; left: -1150px; top: 316px; }
+        
+        .tv { position: absolute; left: 50px; top: 29px; }
+        .txt4_1 { position: absolute; left: 313px; top: 115px; }
+        .txt4_2 { position: absolute; left: 313px; top: 144px; }
+        .txt4_3 { position: absolute; left: 313px; top: 172px; }
+        .txt_modelo_tv { position: absolute; left: 41px; top: 201px; }
+        .cta_bg4 { position: absolute; left: 112px; top: 244px; z-index: 5;}
+        .cta_txt4 { position: absolute; left: 192px; top: 252px; z-index: 5;}
+        .txt_legal { position: absolute; left: 2px; top: 290px; }
+        .bg_branco { position: absolute; left: 0px; top: 0px; width: 480px; height: 320px; background-color: #f6f3ef; overflow: hidden; }
+        .retangulo_azul1 { position: absolute; left: -160px; top: -110px; }
+        .retangulo_azul2 { position: absolute; left: -30px; top: -85px; }
+        .retangulo_azul3 { position: absolute; left: 200px; top: 180px; }
+
+        .txt5_1 { position: absolute; left: 319px; top: 103px; }
+        .txt5_2 { position: absolute; left: 319px; top: 133px; }
+        .txt5_3 { position: absolute; left: 319px; top: 156px; }
+        .txt5_4 { position: absolute; left: 319px; top: 182px; }
+
+        .txt6_1 { position: absolute; left: 322px; top: 91px; }
+        .txt6_2 { position: absolute; left: 321px; top: 115px; }
+        .txt6_3 { position: absolute; left: 321px; top: 140px; }
+        .txt6_4 { position: absolute; left: 321px; top: 162px; }
+        .txt6_5 { position: absolute; left: 321px; top: 191px; }
+
+        #bars-top { position: absolute; left: 0; top: -20px; width: 480px; transform: scaleY(-1); }
+        #bars-bottom { position: absolute; left: 0; top: 320px; width: 480px; }
+        .bar { background: #014778; bottom: 1px; height: 150px; position: absolute; width: 8px; animation: sound 0ms -8000ms linear infinite alternate; }
+
+        @keyframes sound { 
+          0% { height: 45px; }
+          100% { height: 125px;  }
+        }
+
+        .bar:nth-child(1)  { left: 0px; animation-duration: 474ms; }
+        .bar:nth-child(2)  { left: 10px; animation-duration: 433ms; }
+        .bar:nth-child(3)  { left: 20px; animation-duration: 407ms; }
+        .bar:nth-child(4)  { left: 30px; animation-duration: 458ms; }
+        .bar:nth-child(5)  { left: 40px; animation-duration: 400ms; }
+        .bar:nth-child(6)  { left: 50px; animation-duration: 427ms; }
+        .bar:nth-child(7)  { left: 60px; animation-duration: 441ms; }
+        .bar:nth-child(8)  { left: 70px; animation-duration: 419ms; }
+        .bar:nth-child(9)  { left: 80px; animation-duration: 487ms; }
+        .bar:nth-child(10) { left: 90px; animation-duration: 442ms; }
+
+
+        .bar:nth-child(11)  { left: 100px; animation-duration: 474ms; }
+        .bar:nth-child(12)  { left: 110px; animation-duration: 433ms; }
+        .bar:nth-child(13)  { left: 120px; animation-duration: 407ms; }
+        .bar:nth-child(14)  { left: 130px; animation-duration: 458ms; }
+        .bar:nth-child(15)  { left: 140px; animation-duration: 400ms; }
+        .bar:nth-child(16)  { left: 150px; animation-duration: 427ms; }
+        .bar:nth-child(17)  { left: 160px; animation-duration: 441ms; }
+        .bar:nth-child(18)  { left: 170px; animation-duration: 419ms; }
+        .bar:nth-child(19)  { left: 180px; animation-duration: 487ms; }
+        .bar:nth-child(20) { left: 190px; animation-duration: 442ms; }
+
+
+        .bar:nth-child(21)  { left: 200px; animation-duration: 474ms; }
+        .bar:nth-child(22)  { left: 210px; animation-duration: 433ms; }
+        .bar:nth-child(23)  { left: 220px; animation-duration: 407ms; }
+        .bar:nth-child(24)  { left: 230px; animation-duration: 458ms; }
+        .bar:nth-child(25)  { left: 240px; animation-duration: 400ms; }
+        .bar:nth-child(26)  { left: 250px; animation-duration: 427ms; }
+        .bar:nth-child(27)  { left: 260px; animation-duration: 441ms; }
+        .bar:nth-child(28)  { left: 270px; animation-duration: 419ms; }
+        .bar:nth-child(29)  { left: 280px; animation-duration: 487ms; }
+        .bar:nth-child(30) { left: 290px; animation-duration: 442ms; }
+
+
+        .bar:nth-child(31)  { left: 300px; animation-duration: 474ms; }
+        .bar:nth-child(32)  { left: 310px; animation-duration: 433ms; }
+        .bar:nth-child(33)  { left: 320px; animation-duration: 407ms; }
+        .bar:nth-child(34)  { left: 330px; animation-duration: 458ms; }
+        .bar:nth-child(35)  { left: 340px; animation-duration: 400ms; }
+        .bar:nth-child(36)  { left: 350px; animation-duration: 427ms; }
+        .bar:nth-child(37)  { left: 360px; animation-duration: 441ms; }
+        .bar:nth-child(38)  { left: 370px; animation-duration: 419ms; }
+        .bar:nth-child(39)  { left: 380px; animation-duration: 487ms; }
+        .bar:nth-child(40) { left: 390px; animation-duration: 442ms; }
+
+
+        .bar:nth-child(41)  { left: 400px; animation-duration: 474ms; }
+        .bar:nth-child(42)  { left: 410px; animation-duration: 433ms; }
+        .bar:nth-child(43)  { left: 420px; animation-duration: 407ms; }
+        .bar:nth-child(44)  { left: 430px; animation-duration: 458ms; }
+        .bar:nth-child(45)  { left: 440px; animation-duration: 400ms; }
+        .bar:nth-child(46)  { left: 450px; animation-duration: 427ms; }
+        .bar:nth-child(47)  { left: 460px; animation-duration: 441ms; }
+        .bar:nth-child(48)  { left: 470px; animation-duration: 419ms; }
+        .bar:nth-child(49)  { left: 480px; animation-duration: 487ms; }
+        .bar:nth-child(50) { left: 490px; animation-duration: 442ms; }
+    </style>
+</head>
+
+<body style="margin: 0; padding: 0;">
+
+	<div id="canvas">
+        <a href="#" target="_blank" id="clickArea">
+          <img src="logo_samsung_branco.png" class="logo_samsung logo_samsung_branco1">
+          <div class="bg_preto_circle">
+            <img src="bg_circle.png" class="bg_circles bg_circle1">
+            <img src="bg_circle.png" class="bg_circles bg_circle2">
+            <img src="bg_circle.png" class="bg_circles bg_circle3">
+            <img src="bg_circle.png" class="bg_circles bg_circle4">
+            <img src="bg_circle.png" class="bg_circles bg_circle5">
+          </div>
+          <div class="txt1_1_div">
+            <img src="txt1_1.png" class="step1 txt1_1">
+          </div>
+          <div class="txt1_2_div">
+            <img src="txt1_2.png" class="step1 txt1_2">
+          </div>
+          <div class="txt1_3_div">
+            <img src="txt1_3.png" class="step1 txt1_3">
+          </div>
+          <img src="icone1_1.png" class="icones1 icone1_1">
+          <img src="icone1_2.png" class="icones1 icone1_2">
+          <img src="icone1_3.png" class="icones1 icone1_3">
+          <img src="cta_bg.png" class="cta1 cta_bg1">
+          <img src="cta_txt.png" class="cta1 cta_txt1">
+          <img src="mais.png" class="mais1">
+          <img src="mais.png" class="mais2">
+          <img src="mais.png" class="mais3">
+
+          <img src="mais.png" class="mais4" alt="Mais">
+          <img src="linha_branca.png" class="linhas_brancas1 linha_branca1_1">
+          <img src="linha_branca.png" class="linhas_brancas1 linha_branca1_2">
+          <img src="icone2_1.png" class="icones2 icone2_1">
+          <div class="txt2_1_div">
+            <img src="txt2_1.png" class="step2 txt2_1">
+          </div>
+          <div class="txt2_2_div">
+            <img src="txt2_2.png" class="step2 txt2_2">
+          </div>
+          <div class="txt2_3_div">
+            <img src="txt2_3.png" class="step2 txt2_3">
+          </div>
+          <img src="icone2_2.png" class="icones2 icone2_2">
+          <div class="bg_sound_animation">
+            <div id="bars-top">
+              <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+            </div>
+            <div id="bars-bottom">
+              <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+            </div>
+            <img src="bg2.png" class="bg2" alt="Fundo">
+          </div>
+          <img src="linha_branca.png" class="linhas_brancas2 linha_branca2_1">
+          <img src="linha_branca.png" class="linhas_brancas2 linha_branca2_2">
+          <img src="cta_bg.png" class="cta2 cta_bg2">
+          <img src="cta_txt.png" class="cta2 cta_txt2">
+
+		      <img src="bg_globo.jpg" class="bg_globo">
+          <img src="logo_samsung_branco.png" class="logo_samsung logo_samsung_branco1">
+          <img src="txt3_1.png" class="step3 txt3_1">
+          <img src="txt3_2.png" class="step3 txt3_2">
+          <img src="txt3_3.png" class="step3 txt3_3">
+          <img src="txt3_4.png" class="step3 txt3_4">
+          <img src="txt3_5.png" class="step3 txt3_5">
+          <img src="txt3_6.png" class="step3 txt3_6">
+          <img src="riscos_azuis_step1.png" class="riscos risco1">
+          <img src="cta_bg.png" class="cta3 cta_bg3">
+          <img src="cta_txt.png" class="cta3 cta_txt3">
+                    
+          <img src="cta_bg.png" class="cta4 cta_bg4">
+          <img src="cta_txt.png" class="cta4 cta_txt4">
+          <div class="bg_branco">
+              <img src="retangulo_azul.png" class="retangulo_azul1">
+              <img src="retangulo_azul.png" class="retangulo_azul2">
+              <img src="retangulo_azul.png" class="retangulo_azul3">
+          </div>
+          <img src="logo_samsung_preto.png" class="logo_samsung logo_samsung_preto">
+          <img src="tv.png" class="tv" alt="TV">
+          <img src="txt_legal.png" class="txt_legal">
+          <img src="txt4_1.png" class="step4 txt4_1">
+          <img src="txt4_2.png" class="step4 txt4_2">
+          <img src="txt4_3.png" class="step4 txt4_3">
+          <img src="txt_modelo_tv.png" class="txt_modelo_tv">
+
+          <img src="txt5_1.png" class="step5 txt5_1">
+          <img src="txt5_2.png" class="step5 txt5_2">
+          <img src="txt5_3.png" class="step5 txt5_3">
+          <img src="txt5_4.png" class="step5 txt5_4">
+
+          <img src="txt6_1.png" class="step6 txt6_1">
+          <img src="txt6_2.png" class="step6 txt6_2">
+          <img src="txt6_3.png" class="step6 txt6_3">
+          <img src="txt6_4.png" class="step6 txt6_4">
+          <img src="txt6_5.png" class="step6 txt6_5">
+        </a>
+    </div>
+    
+    <!-- LOAD GREENSOCK -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script> -->
+    <script src="https://s0.2mdn.net/ads/studio/cached_libs/tweenmax_2.0.1_min.js"></script>
+    
+    <!-- ANIMATIONS SCRIPTS -->
+    <script>
+
+        tlMain  = new TimelineMax();
+        tlMain
+            .set('#canvas',{autoAlpha: 1});
+            
+        tl = new TimelineMax();
+        tl
+            //STEP 1
+            .staggerFrom(".step1",  0.7, {y:80, ease:Power3.easeOut}, 0.1)
+            .staggerFrom(".icones1",  0.7, {scale:0.4, autoAlpha:0, ease:Back.easeInOut.config(2)},0.1,  0.25)
+            .staggerFrom(".cta1",  1, {scale: 0.3, autoAlpha:0, ease:Back.easeInOut.config(2)}, 0.1, 0.3)
+            .from(".mais1",  1.5, {x:-95, y:190, rotation:-201, ease:Power2.easeOut}, 0)
+            .from(".mais2",  1.5, {x:-95, y:190, rotation:-201, ease:Power2.easeOut}, 0.1)
+            .from(".mais3",  1.5, {x:-95, y:190, rotation:-201, ease:Power2.easeOut}, 0.2)
+            .add(TweenMax.from(".step1", 0.3, {}), "+=2")
+            .to(".mais2, .mais3", 0.01, {autoAlpha:0, ease:Power0.easeNone}, 2.2)
+            .to(".txt1_1_div, .txt1_2_div, .txt1_3_div, .icones1, .cta1, .bg_preto_circle", 1.2, {x:-481, ease:Power3.easeOut})
+            .to(".mais1", 1.2, {x:-481, rotation: 360, ease:Power3.easeOut}, "-=1.2")
+            .from(".bg2",  1.2, {x:481, ease:Power3.easeOut}, "-=1.2")
+            .from(".mais4",  1.2, {x:481, rotation: 360, ease:Power3.easeOut}, "-=1.2")
+            .from(".logo_samsung_branco1",  0.7, {scale:0.45, autoAlpha:0, ease:Power4.easeOut}, 0)
+            .staggerFrom(".bg_circles", 3, {scale:0.1, autoAlpha:0, ease:Power0.easeNone}, 1, 0)
+
+            //STEP 2
+            .from(".linhas_brancas1",  0.3, {autoAlpha:0, ease:Power0.easeNone}, 4.2)
+            .from(".icone2_1",  0.7, {scale:0.4, autoAlpha:0, ease:Back.easeInOut.config(2)}, 4.2)
+            .staggerFrom(".step2",  0.7, {y:60, ease:Power3.easeOut}, 0.1, 4.3)
+            .from(".linhas_brancas2",  0.3, {autoAlpha:0, ease:Power0.easeNone}, 4.5)
+            .from(".icone2_2",  0.7, {scale:0.4, autoAlpha:0, ease:Back.easeInOut.config(2)}, 4.5)
+            .staggerFrom(".cta2",  1, {scale: 0.3, autoAlpha:0, ease:Back.easeInOut.config(2)}, 0.1, 4.4)
+            .add(TweenMax.from(".step2", 0.3, {}), "+=2")
+            .to(".linhas_brancas1, .icone2_1, .step2, .linhas_brancas2, .icone2_2, .cta2, .bg2", 1.2, {x:-481, ease:Power3.easeOut}, 8.1)
+            .to(".mais1", 1.2, {x:-962, rotation: 360, ease:Power3.easeOut}, "-=1.2")
+            .from(".bg_globo", 1.2, {x:481, ease:Power3.easeOut}, "-=1.2")
+            .to(".mais4", 1.2, {x:-481, rotation: 360, ease:Power3.easeOut}, "-=1.2")
+
+            //STEP 3 
+            .from(".riscos",  3.3, {x:1940, ease:Power2.easeOut}, 7.7)
+            .staggerFrom(".step3",  0.7, {x:90, autoAlpha:0, ease:Power3.easeOut}, 0.1, 8.3)
+            .staggerFrom(".cta3",  1, {scale: 0.3, autoAlpha:0, ease:Back.easeInOut.config(2)}, 0.1, 8.2)
+            .add(TweenMax.from(".step3", 0.3, {}), "+=2")
+            .to(".bg_globo, .riscos, .logo_samsung_branco1, .step3, .cta3", 1.2, {x:-481, ease:Power3.easeOut})
+            .to(".mais4", 1.2, {x:-962, rotation: 360, ease:Power3.easeOut}, "-=1.2")
+            .from(".bg_branco",  1.2, {x:481, ease:Power3.easeOut}, "-=1.2")
+            .from(".retangulo_azul1", 3.8, {x:-270, y:-160, ease:Power3.easeOut}, 12.2)
+            .from(".retangulo_azul2", 3, {x:-335, y:-127, ease:Power3.easeOut}, 12.4)
+            .from(".retangulo_azul3", 3.3, {x:-270, y:-120, ease:Power3.easeOut}, 12.7)
+            .to(".bg_sound_animation", 1.2, {autoAlpha:0, ease:Power1.easeOut}, 12)
+
+            //STEP 4
+            .from(".logo_samsung_preto",  0.5, {autoAlpha:0, ease:Power0.easeNone}, 13.5)
+            .from(".tv",  0.6, {scale:1.45, autoAlpha:0, ease:Power4.easeOut}, 13.6)
+            .staggerFrom(".step4",  0.7, {x:40, autoAlpha:0, ease:Power3.easeOut}, 0.1, 13.7)
+            .staggerFrom(".cta4",  1, {scale: 0.3, autoAlpha:0, ease:Back.easeInOut.config(2)}, 0.1, 13.8)
+            .from(".txt_modelo_tv",  0.4, {autoAlpha:0, ease:Power3.easeOut}, 13.8)
+            .from(".txt_legal",  0.5, {autoAlpha:0, ease:Power0.easeNone}, 13.9)
+            .add(TweenMax.from(".step4", 0.3, {}), "+=1.5")
+            .staggerTo(".step4",  0.7, {x:40, autoAlpha:0, ease:Power3.easeOut}, 0.1)
+
+            //STEP 5
+            .staggerFrom(".step5",  0.6, {x:100, autoAlpha:0, ease:Power3.easeOut}, 0.1, "-=0.8")
+            .add(TweenMax.from(".step5", 0.3, {}), "+=2")
+            .staggerTo(".step5",  0.7, {x:40, autoAlpha:0, ease:Power3.easeOut}, 0.1)
+
+            //STEP 6
+            .staggerFrom(".step6",  0.6, {x:100, autoAlpha:0, ease:Power3.easeOut}, 0.1, "-=0.8")
+    </script>
+</body>
+</html>
