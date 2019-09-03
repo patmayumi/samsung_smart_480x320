@@ -264,6 +264,7 @@
         tlMain
             .set('#canvas',{autoAlpha: 1});
             
+        var masterTimeline = new TimelineMax({paused:true}),
         tl = new TimelineMax();
         tl
             //STEP 1
@@ -325,6 +326,13 @@
 
             //STEP 6
             .staggerFrom(".step6",  0.6, {x:100, autoAlpha:0, ease:Power3.easeOut}, 0.1, "-=0.8")
+
+      masterTimeline.add([tl]);
+
+      window.onload = function()
+      {
+          masterTimeline.play();
+      }
     </script>
 </body>
 </html>
